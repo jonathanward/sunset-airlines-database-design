@@ -86,7 +86,17 @@ VALUES('AF22349', 'Aarin', 'Karlin', '4-21-92', 'Platinum'),
         ('LAEE193', 'Julia', 'Liu', '11-28-91', null),
         ('SDFO12A', 'Gloria', 'Henson', '8-14-76', null),
         ('33SDFXL', 'Parker', 'Durham', '1-25-96', 'Silver'),
-        ('TO32KFW', 'Charles', 'Mendez', '9-9-83', 'Gold');
+        ('DK64MP2', 'Charles', 'Mendez', '9-9-83', 'Gold'),
+        ('TDDUP25', 'Lynn', 'Evans', '4-13-84', 'Gold'),
+        ('TDIMU04', 'Irving', 'Reeves', '6-14-90', 'Gold'),
+        ('M5P13BP', 'Webb', 'Riley', '10-7-89', 'Platinum'),
+        ('SX1TGFX', 'Wade', 'Fields', '9-9-87', 'Silver'),
+        ('N09Y2KL', 'Ada', 'Watkins', '3-31-88', 'Executive'),
+        ('SM64MKW', 'Tiffany', 'Maxwell', '12-3-81', 'Platinum'),
+        ('YSSFX64', 'Jacqueline', 'Cannon', '5-2-02', null),
+        ('CMYK3JB', 'Jill', 'McCarthy', '9-9-97', 'Gold'),
+        ('IU0RTL3', 'Penny', 'McCarthy', '10-24-99', 'Silver'),
+        ('HNBN912', 'Lacey', 'Collins', '11-23-94', 'Gold');
         
 INSERT INTO flight_passenger(flight_id, passenger_id)
 VALUES(
@@ -106,6 +116,22 @@ VALUES(
         (SELECT passenger_id FROM passenger WHERE flyer_number = 'SDFO12A')
 ),
 (
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 347'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'TDDUP25')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 347'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'TDIMU04')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 347'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'SX1TGFX')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 347'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'SM64MKW')
+),
+(
         (SELECT flight_id FROM flight WHERE flight_number = 'SA 791'),
         (SELECT passenger_id FROM passenger WHERE flyer_number = 'AF22349')
 ),
@@ -115,7 +141,7 @@ VALUES(
 ),
 (
         (SELECT flight_id FROM flight WHERE flight_number = 'SA 791'),
-        (SELECT passenger_id FROM passenger WHERE flyer_number = 'TO32KFW')
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'TDIMU04')
 ),
 (
         (SELECT flight_id FROM flight WHERE flight_number = 'SA 791'),
