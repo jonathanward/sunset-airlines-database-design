@@ -66,17 +66,21 @@ CREATE TABLE flight_passenger (
 
 INSERT INTO plane(plane_name, plane_type, passenger_capacity)
 VALUES('Boeing 737-900', 'Twin narrow-body airliner', 177),
-        ('Airbus A321-200', 'Twin narrow-body airliner', 208);
+        ('Airbus A321-200', 'Twin narrow-body airliner', 208),
+        ('Boeing B747-8', 'Long-range wide-body airliner', 416);
 
 INSERT INTO airport(iata_code, airport_name, city, state, country)
 VALUES('LGA', 'LaGuardia Airport', 'New York City', 'New York', 'United States'),
         ('DFW', 'Dallas-Fort Worth International Airport', 'Dallas', 'Texas', 'United States'),
         ('CLT', 'Charlotte', 'Charlotte Douglas International Airport', 'North Carolina', 'United States'),
-        ('DEN', 'Denver', 'Denver International Airport', 'Colorado', 'United States');
+        ('DEN', 'Denver', 'Denver International Airport', 'Colorado', 'United States'),
+        ('ORD', 'Chicago', 'O''Hare International Airport', 'Illinois', 'United States'),
+        ('FRA', 'Frankfurt', 'Frankfurt Airport', 'Hessen', 'Germany');
 
 INSERT INTO flight(flight_number, departure_airport, arrival_airport, departure_date, departure_time, arrival_date, arrival_time, plane_id)
 VALUES('SA 347', 'LGA', 'DFW', '7-2-22', '5:45 PM', '7-2-22', '8:30 PM', (SELECT plane_id FROM plane WHERE plane_name = 'Boeing 737-900')),
-        ('SA 791', 'CLT', 'DEN', '7-9-22', '12:59 PM', '7-9-22', '2:08 PM', (SELECT plane_id FROM plane WHERE plane_name = 'Airbus A321-200'));
+        ('SA 791', 'CLT', 'DEN', '7-9-22', '12:59 PM', '7-9-22', '2:08 PM', (SELECT plane_id FROM plane WHERE plane_name = 'Airbus A321-200')),
+        ('SA 1442', 'FRA', 'ORD', '7-12-22', '10:54 AM', '7-9-22', '8:14 PM', (SELECT plane_id FROM plane WHERE plane_name = 'Boeing B747-8'));
         
 INSERT INTO passenger(flyer_number, first_name, last_name, birth_date, status)
 VALUES('AF22349', 'Aarin', 'Karlin', '4-21-92', 'Platinum'),
@@ -162,6 +166,74 @@ VALUES(
 (
         (SELECT flight_id FROM flight WHERE flight_number = 'SA 791'),
         (SELECT passenger_id FROM passenger WHERE flyer_number = 'SDFO12A')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'AF22349')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'DB213OS')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = '67XT3B1')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'LAEE193')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'SDFO12A')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = '33SDFXL')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'DK64MP2')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'TDDUP25')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'TDIMU04')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'M5P13BP')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'SX1TGFX')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'N09Y2KL')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'SM64MKW')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'YSSFX64')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'CMYK3JB')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'IU0RTL3')
+),
+(
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 1442'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'HNBN912')
 );
 
 -- Show airport values
@@ -180,7 +252,7 @@ FROM plane;
 SELECT f.flight_number, f.departure_airport, f.arrival_airport, f.departure_date, f.departure_time, f.arrival_date, f.arrival_time, p.plane_name, p.plane_type, p.passenger_capacity
 FROM flight f
 JOIN plane p ON f.plane_id = p.plane_id
-ORDER BY f.flight_number;
+ORDER BY f.departure_date;
 
 SELECT last_name, first_name, birth_date, flyer_number, status 
 FROM passenger;
