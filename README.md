@@ -3,7 +3,7 @@
 </div>
 <br>
 
-A database project using PostgreSQL that features data modeling, logical design, physical design and physical implementation. The project employs two .sql files: one for creating the initial Sunset Airlines database, and the other for future DAO testing.
+A database project using PostgreSQL and Java that features data modeling, logical design, physical design, physical implementation, data access and DAO testing. The project employs two .sql files: one for creating the initial Sunset Airlines database, and the other for DAO testing. It also makes use of several Java classes and interfaces for data access and integration testing.
 
 ## Design and Table References
 
@@ -56,3 +56,7 @@ A database project using PostgreSQL that features data modeling, logical design,
 | PK, FK (flight)    | flight_id      | int        |
 | PK, FK (passenger) | passenger_id   | int        |
 |                    | date_booked    | timestamp  |
+
+_ _ _
+
+#### Note: The BaseDAOTests and TestingDatabaseConfig classes were created by Tech Elevator. ####
