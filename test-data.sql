@@ -1,6 +1,6 @@
 BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS flight_passenger, plane, airport, flight, passenger;
+DROP TABLE IF EXISTS flight_passenger, plane, airport, flight, passenger CASCADE;
 
 CREATE TABLE plane (
         plane_id serial,

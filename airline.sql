@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS flight_passenger, plane, airport, flight, passenger;
+DROP TABLE IF EXISTS flight_passenger, plane, airport, flight, passenger CASCADE;
 
 -- Create plane, airport, flight, passenger and flight_passenger tables
 
