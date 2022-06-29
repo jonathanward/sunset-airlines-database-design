@@ -1,4 +1,5 @@
 // ***This class was created by Tech Elevator for DAO testing***
+package dao;
 
 import org.junit.After;
 import org.junit.runner.RunWith;

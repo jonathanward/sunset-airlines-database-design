@@ -1,4 +1,5 @@
 // ***This class was created by Tech Elevator for DAO testing***
+package dao;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

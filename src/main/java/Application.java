@@ -17,7 +17,6 @@ public class Application {
 
         Application app = new Application(dataSource);
         app.run();
-
     }
 
     public Application(DataSource dataSource) {
@@ -25,6 +24,10 @@ public class Application {
     }
 
     private void run() {
+
+        // TODO Add command line functionality to application
+
+        // Test methods below
         System.out.println(airportTest.getAirport(5).toString());;
     }
 

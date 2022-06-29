@@ -2,6 +2,8 @@ package dao;
 
 import model.Airport;
 
+import java.util.List;
+
 public interface AirportDao {
 
     Airport getAirport(int airportId);
@@ -10,7 +12,9 @@ public interface AirportDao {
 
     Airport getAirportByCity(String city);
 
-    void createAirport(Airport newAirport);
+    Airport createAirport(Airport newAirport);
+
+    List<Airport> getAllAirports();
 
     void updateAirport(Airport updatedAirport);
 

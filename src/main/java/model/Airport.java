@@ -13,11 +13,12 @@ public class Airport {
 
     public Airport() {}
 
-    public Airport(int airportId, String iataCode, String airportName, String city, String country) {
+    public Airport(int airportId, String iataCode, String airportName, String city, String state, String country) {
         this.airportId = airportId;
         this.iataCode = iataCode;
         this.airportName = airportName;
         this.city = city;
+        this.state = state;
         this.country = country;
     }
 
