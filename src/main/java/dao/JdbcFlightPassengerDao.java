@@ -15,12 +15,12 @@ public class JdbcFlightPassengerDao implements FlightPassengerDao {
     }
 
     @Override
-    public FlightPassenger getFlightPassengerFromFlightId(int flightId) {
+    public FlightPassenger getFlightPassenger(int flightId, int passengerId) {
         FlightPassenger flightPassenger = null;
-        String sql = "SELECT flight_id, passenger_id, date_booked" +
+        String sql = "SELECT flight_id, passenger_id, date_booked " +
                 "FROM flight_passenger " +
-                "WHERE flight_id = ?;";
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, flightId);
+                "WHERE flight_id = ? AND passenger_id = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, flightId, passengerId);
         if (results.next()) {
             flightPassenger = mapRowToFlightPassenger(results);
         }
@@ -28,16 +28,41 @@ public class JdbcFlightPassengerDao implements FlightPassengerDao {
     }
 
     @Override
-    public FlightPassenger getFlightPassengerFromPassengerId(int passengerId) {
-        FlightPassenger flightPassenger = null;
-        String sql = "SELECT flight_id, passenger_id, date_booked" +
+    public List<FlightPassenger> getFlightPassengersFromFlightId(int flightId) {
+        List<FlightPassenger>  flightPassengers = new ArrayList<>();
+        String sql = "SELECT flight_id, passenger_id, date_booked " +
+                "FROM flight_passenger " +
+                "WHERE flight_id = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, flightId);
+        while (results.next()) {
+            flightPassengers.add(mapRowToFlightPassenger(results));
+        }
+        return flightPassengers;
+    }
+
+    @Override
+    public List<FlightPassenger> getFlightPassengersFromPassengerId(int passengerId) {
+        List<FlightPassenger>  flightPassengers = new ArrayList<>();
+        String sql = "SELECT flight_id, passenger_id, date_booked " +
                 "FROM flight_passenger " +
                 "WHERE passenger_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, passengerId);
-        if (results.next()) {
-            flightPassenger = mapRowToFlightPassenger(results);
+        while (results.next()) {
+            flightPassengers.add(mapRowToFlightPassenger(results));
         }
-        return flightPassenger;
+        return flightPassengers;
+    }
+
+    @Override
+    public List<FlightPassenger> getAllFlightPassengers() {
+        List<FlightPassenger> flightPassengers = new ArrayList<>();
+        String sql = "SELECT flight_id, passenger_id, date_booked " +
+                "FROM flight_passenger;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+        while (results.next()) {
+            flightPassengers.add(mapRowToFlightPassenger(results));
+        }
+        return flightPassengers;
     }
 
     @Override
@@ -50,18 +75,6 @@ public class JdbcFlightPassengerDao implements FlightPassengerDao {
             flightPassengerToReturn = mapRowToFlightPassenger(results);
         }
         return flightPassengerToReturn;
-    }
-
-    @Override
-    public List<FlightPassenger> getAllFlightPassengers() {
-        List<FlightPassenger> flightPassengers = new ArrayList<>();
-        String sql = "SELECT flight_id, passenger_id, date_booked" +
-                "FROM flight_passenger;";
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
-        while (results.next()) {
-            flightPassengers.add(mapRowToFlightPassenger(results));
-        }
-        return flightPassengers;
     }
 
     @Override

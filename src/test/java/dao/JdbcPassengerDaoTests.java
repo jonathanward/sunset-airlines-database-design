@@ -1,4 +1,4 @@
 package dao;
 
-public class JdbcPassengerDaoTests {
+public class JdbcPassengerDaoTests extends BaseDaoTests {
 }

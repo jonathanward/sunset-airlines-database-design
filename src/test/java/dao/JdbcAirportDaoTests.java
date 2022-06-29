@@ -1,6 +1,5 @@
 package dao;
 
-import dao.JdbcAirportDao;
 import model.Airport;
 import org.junit.Assert;
 import org.junit.Before;

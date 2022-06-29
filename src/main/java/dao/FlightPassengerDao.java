@@ -6,9 +6,11 @@ import java.util.List;
 
 public interface FlightPassengerDao {
 
-    FlightPassenger getFlightPassengerFromFlightId(int flightId);
+    FlightPassenger getFlightPassenger(int flightId, int passengerId);
 
-    FlightPassenger getFlightPassengerFromPassengerId(int passengerId);
+    List<FlightPassenger> getFlightPassengersFromFlightId(int flightId);
+
+    List<FlightPassenger> getFlightPassengersFromPassengerId(int passengerId);
 
     FlightPassenger createFlightPassenger(FlightPassenger newFlightPassenger);
 

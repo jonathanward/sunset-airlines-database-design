@@ -37,7 +37,7 @@ public class JdbcPlaneDao implements PlaneDao {
     public void updatePlane(Plane updatedPlane) {
         String sql = "UPDATE plane SET plane_name = ?, plane_type = ?, passenger_capacity = ? " +
                 "WHERE plane_id = ?;";
-        jdbcTemplate.update(sql, updatedPlane.getPlaneName(), updatedPlane.getPlaneType(), updatedPlane.getPassengerCapacity());
+        jdbcTemplate.update(sql, updatedPlane.getPlaneName(), updatedPlane.getPlaneType(), updatedPlane.getPassengerCapacity(), updatedPlane.getPlaneId());
     }
 
     @Override
