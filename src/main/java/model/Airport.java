@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Locale;
+
 public class Airport {
 
     private int airportId;
@@ -24,16 +26,33 @@ public class Airport {
 
     @Override
     public String toString() {
-        return "Airport{" +
-                "airportId=" + airportId +
-                ", iataCode='" + iataCode + '\'' +
-                ", airportName='" + airportName + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", province='" + province + '\'' +
-                ", territory='" + territory + '\'' +
-                ", country='" + country + '\'' +
-                '}';
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("-----------------------\r\n");
+        stringBuilder.append(airportName.toUpperCase());
+        stringBuilder.append("\r\n");
+        stringBuilder.append("-----------------------\r\n");
+        stringBuilder.append("\r\nAirport id: ");
+        stringBuilder.append(airportId);
+        stringBuilder.append("\r\nIata code: ");
+        stringBuilder.append(iataCode);
+        stringBuilder.append("\r\nCity: ");
+        stringBuilder.append(city);
+        if (state != null) {
+            stringBuilder.append("\r\nState: ");
+            stringBuilder.append(state);
+        }
+        if (province != null) {
+            stringBuilder.append("\r\nProvince: ");
+            stringBuilder.append(province);
+        }
+        if (territory != null) {
+            stringBuilder.append("\r\nTerritory: ");
+            stringBuilder.append(territory);
+        }
+        stringBuilder.append("\r\nCountry: ");
+        stringBuilder.append(country);
+        stringBuilder.append("\r\n");
+        return stringBuilder.toString();
     }
 
     public int getAirportId() {

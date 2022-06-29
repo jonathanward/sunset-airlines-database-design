@@ -22,6 +22,28 @@ public class Passenger {
         this.status = status;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("-----------------------\r\n");
+        stringBuilder.append(firstName.toUpperCase());
+        stringBuilder.append(" ");
+        stringBuilder.append(lastName.toUpperCase());
+        stringBuilder.append("\r\n");
+        stringBuilder.append("-----------------------\r\n");
+        stringBuilder.append("\r\nPassenger id: ");
+        stringBuilder.append(passengerId);
+        stringBuilder.append("\r\nFlyer number ");
+        stringBuilder.append(flyerNumber);
+        stringBuilder.append("\r\nBirth date: ");
+        stringBuilder.append(birthDate);
+        if (status != null) {
+            stringBuilder.append("\r\nStatus: ");
+            stringBuilder.append(status);
+        }
+        return stringBuilder.toString();
+    }
+
     public int getPassengerId() {
         return passengerId;
     }

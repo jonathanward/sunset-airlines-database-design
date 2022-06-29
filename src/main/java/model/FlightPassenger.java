@@ -16,6 +16,17 @@ public class FlightPassenger {
         this.dateBooked = dateBooked;
     }
 
+    @Override
+    public String toString() {
+        return "\r\nFlight id: " +
+                flightId +
+                "\r\nPassenger id: " +
+                passengerId +
+                "\r\nDate booked: " +
+                dateBooked +
+                "\r\n";
+    }
+
     public int getFlightId() {
         return flightId;
     }

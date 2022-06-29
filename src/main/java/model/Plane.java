@@ -16,6 +16,21 @@ public class Plane {
         this.passengerCapacity = passengerCapacity;
     }
 
+    @Override
+    public String toString() {
+        return "-----------------------\r\n" +
+                planeName.toUpperCase() +
+                "\r\n" +
+                "-----------------------\r\n" +
+                "\r\nPlane id: " +
+                planeId +
+                "\r\nPlane type: " +
+                planeType +
+                "\r\nPassenger capacity: " +
+                passengerCapacity +
+                "\r\n";
+    }
+
     public int getPlaneId() {
         return planeId;
     }

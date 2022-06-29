@@ -30,6 +30,23 @@ public class Flight {
         this.planeId = planeId;
     }
 
+    @Override
+    public String toString() {
+        return "-----------------------\r\n" +
+                flightNumber.toUpperCase() +
+                "\r\n" +
+                "-----------------------\r\n" +
+                "Flight id: " + flightId +
+                "\r\nFlight number: " + flightNumber +
+                "\r\nDeparture airport: " + departureAirport +
+                "\r\nArrival airport: " + arrivalAirport +
+                "\r\nDeparture date: " + departureDate +
+                "\r\nDeparture time: " + departureTime +
+                "\r\nArrival date: " + arrivalDate +
+                "\r\nArrival time: " + arrivalTime +
+                "\r\nPlane id: " + planeId + "\r\n";
+    }
+
     public int getFlightId() {
         return flightId;
     }

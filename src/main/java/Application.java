@@ -28,7 +28,7 @@ public class Application {
         // TODO Add command line functionality to application
 
         // Test methods below
-        System.out.println(airportTest.getAirport(5).toString());;
+        System.out.println(airportTest.getAirport(2).toString());;
     }
 
 }
