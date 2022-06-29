@@ -10,6 +10,8 @@ public interface FlightDao {
 
     List<Flight> getAllFlights();
 
+    // TODO Add createFlight method
+
     void updateFlight(Flight updatedFlight);
 
     void deleteFlight(int flightId);

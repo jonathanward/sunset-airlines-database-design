@@ -1,16 +1,16 @@
 package model;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class FlightPassenger {
 
     private int flightId;
     private int passengerId;
-    private LocalDate dateBooked;
+    private LocalDateTime dateBooked;
 
     public FlightPassenger() {}
 
-    public FlightPassenger(int flightId, int passengerId, LocalDate dateBooked) {
+    public FlightPassenger(int flightId, int passengerId, LocalDateTime dateBooked) {
         this.flightId = flightId;
         this.passengerId = passengerId;
         this.dateBooked = dateBooked;
@@ -43,11 +43,11 @@ public class FlightPassenger {
         this.passengerId = passengerId;
     }
 
-    public LocalDate getDateBooked() {
+    public LocalDateTime getDateBooked() {
         return dateBooked;
     }
 
-    public void setDateBooked(LocalDate dateBooked) {
+    public void setDateBooked(LocalDateTime dateBooked) {
         this.dateBooked = dateBooked;
     }
 }

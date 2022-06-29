@@ -1,5 +1,5 @@
 import dao.JdbcAirportDao;
-import model.Airport;
+import dao.JdbcFlightPassengerDao;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 import javax.sql.DataSource;
@@ -7,6 +7,7 @@ import javax.sql.DataSource;
 public class Application {
 
     private JdbcAirportDao airportTest;
+    private JdbcFlightPassengerDao flightPassengerTest;
 
     public static void main(String[] args) {
 
@@ -21,6 +22,7 @@ public class Application {
 
     public Application(DataSource dataSource) {
         airportTest = new JdbcAirportDao(dataSource);
+        flightPassengerTest = new JdbcFlightPassengerDao(dataSource);
     }
 
     private void run() {
@@ -28,7 +30,7 @@ public class Application {
         // TODO Add command line functionality to application
 
         // Test methods below
-        System.out.println(airportTest.getAirport(2).toString());;
+        System.out.println(airportTest.getAirport(2).toString());
     }
 
 }
