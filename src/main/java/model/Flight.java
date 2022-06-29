@@ -2,6 +2,7 @@ package model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class Flight {
 
@@ -10,14 +11,14 @@ public class Flight {
     private String departureAirport;
     private String arrivalAirport;
     private LocalDate departureDate;
-    private LocalDateTime departureTime;
+    private LocalTime departureTime;
     private LocalDate arrivalDate;
-    private LocalDateTime arrivalTime;
+    private LocalTime arrivalTime;
     private int planeId;
 
     public Flight() {}
 
-    public Flight(int flightId, String flightNumber, String departureAirport, String arrivalAirport, LocalDate departureDate, LocalDateTime departureTime, LocalDate arrivalDate, LocalDateTime arrivalTime, int planeId) {
+    public Flight(int flightId, String flightNumber, String departureAirport, String arrivalAirport, LocalDate departureDate, LocalTime departureTime, LocalDate arrivalDate, LocalTime arrivalTime, int planeId) {
         this.flightId = flightId;
         this.flightNumber = flightNumber;
         this.departureAirport = departureAirport;
@@ -69,11 +70,11 @@ public class Flight {
         this.departureDate = departureDate;
     }
 
-    public LocalDateTime getDepartureTime() {
+    public LocalTime getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime(LocalDateTime departureTime) {
+    public void setDepartureTime(LocalTime departureTime) {
         this.departureTime = departureTime;
     }
 
@@ -85,11 +86,11 @@ public class Flight {
         this.arrivalDate = arrivalDate;
     }
 
-    public LocalDateTime getArrivalTime() {
+    public LocalTime getArrivalTime() {
         return arrivalTime;
     }
 
-    public void setArrivalTime(LocalDateTime arrivalTime) {
+    public void setArrivalTime(LocalTime arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
 
