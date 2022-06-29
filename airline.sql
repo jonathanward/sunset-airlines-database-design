@@ -136,6 +136,10 @@ VALUES(
         (SELECT passenger_id FROM passenger WHERE flyer_number = 'SM64MKW')
 ),
 (
+        (SELECT flight_id FROM flight WHERE flight_number = 'SA 347'),
+        (SELECT passenger_id FROM passenger WHERE flyer_number = 'M5P13BP')
+),
+(
         (SELECT flight_id FROM flight WHERE flight_number = 'SA 791'),
         (SELECT passenger_id FROM passenger WHERE flyer_number = 'AF22349')
 ),
