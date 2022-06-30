@@ -27,10 +27,16 @@ public class Airport {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("-----------------------\r\n");
+        for (int i = 0; i < airportName.length(); i++) {
+            stringBuilder.append("-");
+        }
+        stringBuilder.append("\r\n");
         stringBuilder.append(airportName.toUpperCase());
         stringBuilder.append("\r\n");
-        stringBuilder.append("-----------------------\r\n");
+        for (int i = 0; i < airportName.length(); i++) {
+            stringBuilder.append("-");
+        }
+        stringBuilder.append("\r\n");
         stringBuilder.append("\r\nAirport id: ");
         stringBuilder.append(airportId);
         stringBuilder.append("\r\nIata code: ");
