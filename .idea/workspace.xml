@@ -49,7 +49,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="JUnit.All in sunset-airlines-database-data-access-dao-testing">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
       <module name="sunset-airlines-database-data-access-dao-testing" />
@@ -57,17 +57,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JdbcFlightDaoTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in sunset-airlines-database-data-access-dao-testing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sunset-airlines-database-data-access-dao-testing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.JdbcFlightDaoTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -118,11 +111,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in sunset-airlines-database-data-access-dao-testing" />
         <item itemvalue="Application.Application" />
         <item itemvalue="JUnit.dao in sunset-airlines-database-data-access-dao-testing" />
         <item itemvalue="JUnit.JdbcPassengerDaoTests" />
         <item itemvalue="JUnit.JdbcPlaneDaoTests" />
-        <item itemvalue="JUnit.JdbcFlightDaoTests" />
       </list>
     </recent_temporary>
   </component>
