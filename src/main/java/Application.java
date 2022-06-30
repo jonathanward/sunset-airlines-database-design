@@ -31,6 +31,8 @@ public class Application {
 
         // Test methods below
         System.out.println(airportTest.getAirport(2).toString());
+
+        System.out.println(flightPassengerTest.getFlightPassenger(1, 1));
     }
 
 }

@@ -26,9 +26,9 @@ public class TestingDatabaseConfig {
     private static final String DB_NAME =
             Objects.requireNonNullElse(System.getenv("DB_NAME"), "AirlineTesting");
     private static final String DB_USER =
-            Objects.requireNonNullElse(System.getenv("DB_USER"), ""); // Username redacted
+            Objects.requireNonNullElse(System.getenv("DB_USER"), "postgres"); // Username redacted
     private static final String DB_PASSWORD =
-            Objects.requireNonNullElse(System.getenv("DB_PASSWORD"), ""); // Password redacted
+            Objects.requireNonNullElse(System.getenv("DB_PASSWORD"), "***REMOVED***"); // Password redacted
 
 
     private SingleConnectionDataSource adminDataSource;

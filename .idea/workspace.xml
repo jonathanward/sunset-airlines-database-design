@@ -21,6 +21,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2BAnNG4GB4iEjkQdVREh3H5P0Hp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,14 +49,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JdbcFlightDaoTests">
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Application" />
-      <module name="sunset-airlines-database-data-access-dao-testing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.dao in sunset-airlines-database-data-access-dao-testing">
     <configuration name="JdbcAirportDaoTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sunset-airlines-database-data-access-dao-testing" />
       <extension name="coverage">
@@ -84,7 +80,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JdbcFlightPassengerDaoTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JdbcPassengerDaoTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sunset-airlines-database-data-access-dao-testing" />
       <extension name="coverage">
         <pattern>
@@ -93,7 +89,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.JdbcFlightPassengerDaoTests" />
+      <option name="MAIN_CLASS_NAME" value="dao.JdbcPassengerDaoTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -114,13 +110,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="dao in sunset-airlines-database-data-access-dao-testing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sunset-airlines-database-data-access-dao-testing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JdbcFlightDaoTests" />
-        <item itemvalue="JUnit.JdbcFlightPassengerDaoTests" />
+        <item itemvalue="JUnit.dao in sunset-airlines-database-data-access-dao-testing" />
+        <item itemvalue="JUnit.JdbcPassengerDaoTests" />
         <item itemvalue="JUnit.JdbcPlaneDaoTests" />
+        <item itemvalue="JUnit.JdbcFlightDaoTests" />
         <item itemvalue="JUnit.JdbcAirportDaoTests" />
-        <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
   </component>

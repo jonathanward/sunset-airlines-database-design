@@ -31,44 +31,69 @@ public class JdbcFlightPassengerDaoTests extends BaseDaoTests {
     }
 
     @Test
-    public void getFlightPassenger_returns_correct_flightpassenger_for_ids() {
+    public void getFlightPassenger_returns_correct_flightPassenger_for_ids() {
         FlightPassenger flightPassenger = sut.getFlightPassenger(1, 1);
         assertFlightPassengersMatch(FLIGHT_PASSENGER_1, flightPassenger);
     }
 
     @Test
     public void getFlightPassengersFromFlightId_returns_correct_flightpassenger_list_for_id() {
-        List<FlightPassenger> flightPassengersActual = new ArrayList<>();
-        flightPassengersActual.add(FLIGHT_PASSENGER_1);
-        flightPassengersActual.add(FLIGHT_PASSENGER_2);
-        flightPassengersActual.add(FLIGHT_PASSENGER_3);
+        List<FlightPassenger> flightPassengersExpected = new ArrayList<>();
+        flightPassengersExpected.add(FLIGHT_PASSENGER_1);
+        flightPassengersExpected.add(FLIGHT_PASSENGER_2);
+        flightPassengersExpected.add(FLIGHT_PASSENGER_3);
 
-        List<FlightPassenger> flightPassengersExpected = sut.getFlightPassengersFromFlightId(1);
+        List<FlightPassenger> flightPassengersActual = sut.getFlightPassengersFromFlightId(1);
         Assert.assertEquals(flightPassengersExpected.size(), flightPassengersActual.size());
         assertFlightPassengersMatch(FLIGHT_PASSENGER_1, flightPassengersActual.get(0));
     }
 
     @Test
-    public void getAllFlightPassengers_returns_correct_flightpassenger_list() {
-        List<FlightPassenger> flightPassengersActual = new ArrayList<>();
-        flightPassengersActual.add(FLIGHT_PASSENGER_1);
-        flightPassengersActual.add(FLIGHT_PASSENGER_2);
-        flightPassengersActual.add(FLIGHT_PASSENGER_3);
-        flightPassengersActual.add(FLIGHT_PASSENGER_4);
-        flightPassengersActual.add(FLIGHT_PASSENGER_5);
-        flightPassengersActual.add(FLIGHT_PASSENGER_6);
-        flightPassengersActual.add(FLIGHT_PASSENGER_7);
+    public void getAllFlightPassengers_returns_correct_flightPassenger_list() {
+        List<FlightPassenger> flightPassengersExpected = new ArrayList<>();
+        flightPassengersExpected.add(FLIGHT_PASSENGER_1);
+        flightPassengersExpected.add(FLIGHT_PASSENGER_2);
+        flightPassengersExpected.add(FLIGHT_PASSENGER_3);
+        flightPassengersExpected.add(FLIGHT_PASSENGER_4);
+        flightPassengersExpected.add(FLIGHT_PASSENGER_5);
+        flightPassengersExpected.add(FLIGHT_PASSENGER_6);
+        flightPassengersExpected.add(FLIGHT_PASSENGER_7);
 
-        List<FlightPassenger> flightPassengersExpected = sut.getAllFlightPassengers();
+        List<FlightPassenger> flightPassengersActual = sut.getAllFlightPassengers();
         Assert.assertEquals(flightPassengersExpected.size(), flightPassengersActual.size());
         assertFlightPassengersMatch(FLIGHT_PASSENGER_1, flightPassengersActual.get(0));
+    }
+
+    @Test
+    public void deleteFlightPassenger_deletes_correct_flightPassenger() {
+        int flightId = 1;
+        int passengerId = 3;
+        sut.deleteFlightPassenger(flightId, passengerId);
+        FlightPassenger deletedFlightPassenger = sut.getFlightPassenger(flightId, passengerId);
+        Assert.assertNull(deletedFlightPassenger);
+    }
+
+    @Test
+    public void deleteFlightPassengerFromFlightId_deletes_correct_flightPassenger() {
+        int flightId = 1;
+        int passengerId = 3;
+        sut.deleteFlightPassengerFromFlightId(flightId);
+        FlightPassenger deletedFlightPassenger = sut.getFlightPassenger(flightId, passengerId);
+        Assert.assertNull(deletedFlightPassenger);
+    }
+
+    @Test
+    public void deleteFlightPassengerFromPassengerId_deletes_correct_flightPassenger() {
+        int flightId = 2;
+        int passengerId = 4;
+        sut.deleteFlightPassengerFromPassengerId(passengerId);
+        FlightPassenger deletedFlightPassenger = sut.getFlightPassenger(flightId, passengerId);
+        Assert.assertNull(deletedFlightPassenger);
     }
 
     private void assertFlightPassengersMatch(FlightPassenger expected, FlightPassenger actual) {
         Assert.assertEquals(expected.getFlightId(), actual.getFlightId());
         Assert.assertEquals(expected.getPassengerId(), actual.getPassengerId());
-        // TODO Resolve LocalDateTime difference
-        // Assert.assertEquals(expected.getDateBooked(), actual.getDateBooked());
     }
 
 }

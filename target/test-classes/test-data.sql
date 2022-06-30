@@ -70,7 +70,7 @@ INSERT INTO airport(iata_code, airport_name, city, state, country)
 VALUES('AAA', 'A City Airport', 'A City', 'A State', 'A Country'),
         ('BBB', 'B City Airport', 'B City', 'B State', 'B Country'),
         ('CCC', 'C City Airport', 'C City', 'C State', 'C Country'),
-        ('DDD', 'D City Airport', 'D City', 'D State', 'D County');
+        ('DDD', 'D City Airport', 'D City', 'D State', 'D Country');
 
 INSERT INTO flight(flight_number, departure_airport, arrival_airport, departure_date, departure_time, arrival_date, arrival_time, plane_id)
 VALUES('SA 100', 'AAA', 'BBB', '1-1-23', '11:00 AM', '1-2-23', '1:30 AM', (SELECT plane_id FROM plane WHERE plane_name = 'plane-1')),

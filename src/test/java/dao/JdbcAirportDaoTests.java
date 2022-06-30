@@ -50,14 +50,14 @@ public class JdbcAirportDaoTests extends BaseDaoTests {
 
     @Test
     public void getAllAirports_returns_list_of_all_airports() {
-        List<Airport> airportsActual = new ArrayList<>();
-        airportsActual.add(AIRPORT_1);
-        airportsActual.add(AIRPORT_2);
-        airportsActual.add(AIRPORT_3);
-        airportsActual.add(AIRPORT_4);
+        List<Airport> airportsExpected = new ArrayList<>();
+        airportsExpected.add(AIRPORT_1);
+        airportsExpected.add(AIRPORT_2);
+        airportsExpected.add(AIRPORT_3);
+        airportsExpected.add(AIRPORT_4);
 
-        List<Airport> airportsExpected = sut.getAllAirports();
-        Assert.assertEquals(airportsActual.size(), airportsExpected.size());
+        List<Airport> airportsActual = sut.getAllAirports();
+        Assert.assertEquals(airportsExpected.size(), airportsActual.size());
 
         assertAirportsMatch(AIRPORT_1, airportsActual.get(0));
         assertAirportsMatch(AIRPORT_4, airportsActual.get(3));

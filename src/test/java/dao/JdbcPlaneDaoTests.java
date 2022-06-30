@@ -25,7 +25,11 @@ public class JdbcPlaneDaoTests extends BaseDaoTests {
         assertPlanesMatch(PLANE_1, plane);
     }
 
-    // TODO Create test for getPlane when id does not exist
+    @Test
+    public void getPlane_returns_null_for_invalid_id() {
+        Plane plane = sut.getPlane(12);
+        Assert.assertNull(plane);
+    }
 
     @Test
     public void updatePlane_updates_correct_values() {
@@ -40,7 +44,13 @@ public class JdbcPlaneDaoTests extends BaseDaoTests {
         assertPlanesMatch(planeToUpdate, actualPlane);
     }
 
-    // TODO Create test for deletePlane
+    @Test
+    public void deletePlane_deletes_correct_plane() {
+        int planeId = 1;
+        sut.deletePlane(planeId);
+        Plane planeToDelete = sut.getPlane(planeId);
+        Assert.assertNull(planeToDelete);
+    }
 
     private void assertPlanesMatch(Plane expected, Plane actual) {
         Assert.assertEquals(expected.getPlaneId(), actual.getPlaneId());
