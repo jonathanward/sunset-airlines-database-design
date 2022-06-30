@@ -19,7 +19,7 @@ public class JdbcFlightDao implements FlightDao {
         Flight flight = null;
         String sql = "SELECT flight_id, flight_number, departure_airport, arrival_airport, departure_date, departure_time, arrival_date, arrival_time, plane_id " +
                 "FROM flight " +
-                "WHERE flight = ?;";
+                "WHERE flight_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, flightId);
         if (results.next()) {
             flight = mapRowToFlight(results);
@@ -62,8 +62,7 @@ public class JdbcFlightDao implements FlightDao {
         flight.setDepartureDate(results.getDate("departure_date").toLocalDate());
         flight.setDepartureTime(results.getTime("departure_time").toLocalTime());
         flight.setArrivalDate(results.getDate("arrival_date").toLocalDate());
-        flight.setDepartureDate(results.getDate("departure_date").toLocalDate());
-        flight.setArrivalDate(results.getDate("arrival_date").toLocalDate());
+        flight.setArrivalTime(results.getTime("arrival_time").toLocalTime());
         flight.setPlaneId(results.getInt("plane_id"));
 
         return flight;
