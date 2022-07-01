@@ -27,7 +27,7 @@ public class JdbcPlaneDao implements PlaneDao {
 
     @Override
     public Plane createPlane(Plane newPlane) {
-        String sql = "INSERT INTO plane (plane_name, plane_type, passenger_capacity " +
+        String sql = "INSERT INTO plane (plane_name, plane_type, passenger_capacity) " +
                 "VALUES (?, ?, ?) RETURNING plane_id;";
         Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, newPlane.getPlaneName(), newPlane.getPlaneType(), newPlane.getPassengerCapacity());
         return getPlane(newId);
