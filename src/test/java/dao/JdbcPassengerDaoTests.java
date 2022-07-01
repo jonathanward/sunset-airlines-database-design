@@ -27,6 +27,18 @@ public class JdbcPassengerDaoTests extends BaseDaoTests {
     }
 
     @Test
+    public void getPassengerByLastName_returns_correct_passenger_for_lastName() {
+        Passenger passenger = sut.getPassengerByLastName("last2");
+        assertPassengersMatch(PASSENGER_2, passenger);
+    }
+
+    @Test
+    public void getPassengerByFlyerNumber_returns_correct_passenger_for_FlyerNumber() {
+        Passenger passenger = sut.getPassengerByFlyerNumber("CDEFGHI");
+        assertPassengersMatch(PASSENGER_3, passenger);
+    }
+
+    @Test
     public void getPassenger_returns_null_for_invalid_id() {
         Passenger passenger = sut.getPassenger(13);
         Assert.assertNull(passenger);

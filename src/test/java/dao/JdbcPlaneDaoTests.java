@@ -32,6 +32,13 @@ public class JdbcPlaneDaoTests extends BaseDaoTests {
     }
 
     @Test
+    public void createPlane_returns_plane_with_correct_values() {
+        Plane actualPlane = sut.createPlane(testPlane);
+        testPlane.setPlaneId(3);
+        assertPlanesMatch(testPlane, actualPlane);
+    }
+
+    @Test
     public void updatePlane_updates_correct_values() {
         int planeId = 2;
         Plane planeToUpdate = sut.getPlane(planeId);

@@ -37,7 +37,7 @@ public class JdbcFlightPassengerDaoTests extends BaseDaoTests {
     }
 
     @Test
-    public void getFlightPassengersFromFlightId_returns_correct_flightpassenger_list_for_id() {
+    public void getFlightPassengersFromFlightId_returns_correct_flightPassenger_list_for_id() {
         List<FlightPassenger> flightPassengersExpected = new ArrayList<>();
         flightPassengersExpected.add(FLIGHT_PASSENGER_1);
         flightPassengersExpected.add(FLIGHT_PASSENGER_2);
@@ -62,6 +62,12 @@ public class JdbcFlightPassengerDaoTests extends BaseDaoTests {
         List<FlightPassenger> flightPassengersActual = sut.getAllFlightPassengers();
         Assert.assertEquals(flightPassengersExpected.size(), flightPassengersActual.size());
         assertFlightPassengersMatch(FLIGHT_PASSENGER_1, flightPassengersActual.get(0));
+    }
+
+    @Test
+    public void createFlightPassenger_creates_correct_flightPassenger() {
+        FlightPassenger actualFlightPassenger = sut.createFlightPassenger(testFlightPassenger);
+        assertFlightPassengersMatch(testFlightPassenger, actualFlightPassenger);
     }
 
     @Test

@@ -67,7 +67,7 @@ public class JdbcFlightPassengerDao implements FlightPassengerDao {
 
     @Override
     public FlightPassenger createFlightPassenger(FlightPassenger newFlightPassenger) {
-        String sql = "INSERT INTO flight_passenger (flight_id, passenger_id, date_booked) " +
+        String sql = "INSERT INTO flight_passenger (flight_id, passenger_id) " +
                 "VALUES (?, ?) RETURNING flight_id, passenger_id, date_booked;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, newFlightPassenger.getFlightId(), newFlightPassenger.getPassengerId());
         FlightPassenger flightPassengerToReturn = new FlightPassenger();

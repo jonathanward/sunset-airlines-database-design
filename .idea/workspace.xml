@@ -49,7 +49,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in sunset-airlines-database-data-access-dao-testing">
+  <component name="RunManager" selected="JUnit.dao in sunset-airlines-database-data-access-dao-testing">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
       <module name="sunset-airlines-database-data-access-dao-testing" />
@@ -80,7 +80,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JdbcPlaneDaoTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JdbcPassengerDaoTests.getPassengerByLastName_returns_correct_passenger_for_lastName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sunset-airlines-database-data-access-dao-testing" />
       <extension name="coverage">
         <pattern>
@@ -89,8 +89,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.JdbcPlaneDaoTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="dao.JdbcPassengerDaoTests" />
+      <option name="METHOD_NAME" value="getPassengerByLastName_returns_correct_passenger_for_lastName" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,11 +112,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.dao in sunset-airlines-database-data-access-dao-testing" />
+        <item itemvalue="JUnit.JdbcPassengerDaoTests.getPassengerByLastName_returns_correct_passenger_for_lastName" />
         <item itemvalue="JUnit.All in sunset-airlines-database-data-access-dao-testing" />
         <item itemvalue="Application.Application" />
-        <item itemvalue="JUnit.dao in sunset-airlines-database-data-access-dao-testing" />
         <item itemvalue="JUnit.JdbcPassengerDaoTests" />
-        <item itemvalue="JUnit.JdbcPlaneDaoTests" />
       </list>
     </recent_temporary>
   </component>
@@ -130,8 +131,18 @@
     </task>
     <servers />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/sunset_airlines_database_data_access_dao_testing$dao_in_sunset_airlines_database_data_access_dao_testing.ic" NAME="dao in sunset-airlines-database-data-access-dao-testing Coverage Results" MODIFIED="1656564334292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/sunset_airlines_database_data_access_dao_testing$dao_in_sunset_airlines_database_data_access_dao_testing.ic" NAME="dao in sunset-airlines-database-data-access-dao-testing Coverage Results" MODIFIED="1656652489667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>dao.*</FILTER>
     </SUITE>
   </component>

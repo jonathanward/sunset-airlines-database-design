@@ -68,7 +68,6 @@ public class JdbcAirportDaoTests extends BaseDaoTests {
         Airport actualAirport = sut.createAirport(testAirport);
 
         testAirport.setAirportId(5);
-        System.out.println(testAirport.toString());
         assertAirportsMatch(testAirport, actualAirport);
     }
 
